@@ -6,7 +6,7 @@ If you are preparing for the Elasticsearch Certified Engineer's Exam, working kn
 
 https://github.com/tebook/prepbook-elastic-certified-engineer/blob/main/elastprepbook/accounts.json
 
-Use the data visualizer under Machine Learning to upload the accounts.json file into ES
+Use Data Visualizer under Machine Learning to ingest the accounts.json file into ES. I am also using the set processor to set doc _id same as the account number field for each document. This can be done using ingest pipeline setting which can be found under Advanced section.
 
 ![image](https://user-images.githubusercontent.com/99671188/162035534-a3b3a15d-3c56-4122-b7df-c62bc7954b35.png)
 
@@ -33,10 +33,11 @@ Painless can be used with the _update API to update the documents of an index.
 POST accounts/_update/6
 {
   "script": {
-    "source": "ctx._source.gender = \"Male\""
+    "source": "ctx._source.gender = 'Male'"
   }
 }
 ```
+Let's verify that the document has been updated by making use of the _doc API
 
 ```
 GET accounts/_doc/6
