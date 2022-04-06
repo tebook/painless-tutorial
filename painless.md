@@ -162,7 +162,7 @@ GET bank/_search
 ```
 
 
-Hope you find this useful. I will be adding more examples very soon.
+Hope you find this tutorial useful. I will updating it by adding more examples very soon.
 
 If you are preparing for the Elastic Certified Engineer Exam, do checkout this book written by me
 
