@@ -144,7 +144,7 @@ GET accounts/_search
   }
 }
 ```
-A common use case is to have to build dynamic fields on the fly while searching. You can build dynamic fields in the query answer using script fields ("script fields"). Let's make a scripted field called balancebyage that is formed by dividing account balance by the account holder's age, and observe how script fields work. Also, because the balance and age fields are not analyzed and have doc values enabled by default, I'm getting them via doc values rather than source, which would be substantially slower.
+A common use case is to have to build dynamic fields on the fly while searching. You can build dynamic fields in the query answer using script fields ("script fields"). Let's make a scripted field called balancebyage that is formed by dividing account balance by the account holder's age, and observe how script fields work. Also, because the balance and age fields are not analyzed and have doc values enabled by default, I'm getting them via doc values rather than _source, which would be substantially slower.
 ```
 GET bank/_search
 {
