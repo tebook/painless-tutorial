@@ -4,6 +4,13 @@ Most of the time if you are using Elasticsearch(ES), data may have to transforme
 
 If you are preparing for the Elasticsearch Certified Engineer's Exam, working knowledge of Painless becomes extremely important. The following section discuss about the basics of Painless to get you started quickly. For this tutorial I have used the accounts index which can be created using the sample data found here.
 
+https://github.com/tebook/prepbook-elastic-certified-engineer/blob/main/elastprepbook/accounts.json
+
+Use the data visualizer under Machine Learning to upload the accounts.json file into ES
+
+![image](https://user-images.githubusercontent.com/99671188/162035534-a3b3a15d-3c56-4122-b7df-c62bc7954b35.png)
+
+
 Let's have a look at the syntax of painless scripts before we start using them.
 ```
 "script": {
