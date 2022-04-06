@@ -14,9 +14,9 @@ Let's have a look at the syntax of painless scripts before we start using them.
 ```
 The script syntax is divided into three components, as seen above:
 
-lang: The language in which the script is written. Because the default is painless, this parameter is not required if painless scripts are used. "painless," "expression," "moustache," "java," are examples of permissible values for this field.
-source: The real script will be found in the source section.
-params: If any params are required by the defined script, they can be given in this section.
+* lang: The language in which the script is written. Because the default is painless, this parameter is not required if painless scripts are used. "painless," "expression," "moustache," "java," are examples of permissible values for this field.
+* source: The real script will be found in the source section.
+* params: If any params are required by the defined script, they can be given in this section.
 
 If doc values are enabled, the document values can be accessed within the script using the syntax doc['field name']. Doc values will be enabled by default for 'Not Analyzed' fields. Another way of accessing the value is by using the syntax ctx. source.field name (i.e. use "_source" fields).  Typically you would like to use doc values for search and aggregation operations, and "_source" fields for updates.
 
