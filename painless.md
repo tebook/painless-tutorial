@@ -27,11 +27,10 @@ The script syntax is divided into three components, as seen above:
 
 If doc values are enabled, the document values can be accessed within the script using the syntax doc['field name']. Doc values will be enabled by default for 'Not Analyzed' fields. Another way of accessing the value is by using the syntax ctx. source.field name (i.e. use "_source" fields).  Typically you would like to use doc values for search and aggregation operations, and "_source" fields for updates.
 
-Painless can be used with the _update API to update the documents of an index. Make sure to change the doc _id in the example below with your document id.
-
+Painless can be used with the _update API to update the documents of an index. 
 
 ```
-POST accounts/_update/cBoP-H8Bi5LMwQDv6Xb6
+POST accounts/_update/6
 {
   "script": {
     "source": "ctx._source.gender = \"Male\""
@@ -40,7 +39,7 @@ POST accounts/_update/cBoP-H8Bi5LMwQDv6Xb6
 ```
 
 ```
-GET accounts/_doc/cBoP-H8Bi5LMwQDv6Xb6
+GET accounts/_doc/6
 ```
 
 Because the default language in ES is "painless," there was no need to specify the "lang" option in the previous example. We didn't send any parameters to the scripts, therefore "params" was left out as well. What would be the benefit of using "params"? Other than hardcoding the data in the script, why should you use "params"?
@@ -50,7 +49,7 @@ Elasticsearch builds a new script the first time it sees it and saves the built 
 
 Let's look at how to change the example above to pass variables to the script:
 ```
-POST accounts/_update/dRoP-H8Bi5LMwQDv6Xb6
+POST accounts/_update/1
 {
   "script": {
     "source": "ctx._source.gender = params.F",
@@ -62,9 +61,9 @@ POST accounts/_update/dRoP-H8Bi5LMwQDv6Xb6
 ```
 
 ```
-GET accounts/_doc/dRoP-H8Bi5LMwQDv6Xb6
+GET accounts/_doc/1
 ```
-Again make sure to replace the doc _id above with your doc _id.
+
 
 Painless can also be used with _update_by_query. In the last example we changed gender for few documents, lets change gender from M to Male for all the male accounts. The _update_by_query as the name implies will run an update on documents based on the outcome of the query.
 ```
