@@ -25,7 +25,7 @@ The script syntax is divided into three components, as seen above:
 * source: The real script will be found in the source section.
 * params: If any params are required by the defined script, they can be given in this section.
 
-If doc values are enabled, the document values can be accessed within the script using the syntax doc['field name']. Doc values will be enabled by default for 'Not Analyzed' fields. Another way of accessing the value is by using the syntax ctx. source.field name (i.e. use "_source" fields).  Typically you would like to use doc values for search and aggregation operations, and "_source" fields for updates.
+If doc values are enabled, the document values can be accessed within the script using the syntax doc['field name']. Doc values will be enabled by default for 'Not Analyzed' fields. Another way of accessing the value is by using the syntax ctx._source.field name (i.e. use "_source" fields).  Typically you would like to use doc values for search and aggregation operations, and "_source" fields for updates.
 
 Painless can be used with the _update API to update the documents of an index. 
 
@@ -160,3 +160,10 @@ GET bank/_search
     }
   }
 ```
+
+
+Hope you find this useful. I will be adding more examples very soon.
+
+If you are preparing for the Elastic Certified Engineer Exam, do checkout this book written by me
+
+https://www.amazon.com/Exam-Guide-Elastic-Certified-Engineer-ebook/dp/B09TQ1PS6T/
