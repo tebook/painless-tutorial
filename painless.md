@@ -5,13 +5,13 @@ Most of the time if you are using Elasticsearch(ES), data may have to transforme
 If you are preparing for the Elasticsearch Certified Engineer's Exam, working knowledge of Painless becomes extremely important. The following section discuss about the basics of Painless to get you started quickly. For this tutorial I have used the accounts index which can be created using the sample data found here.
 
 Let's have a look at the syntax of painless scripts before we start using them.
-
+```
 "script": {
  "lang": "...", 
  "source": "...",
  "params": { ... }
  }
-
+```
 The script syntax is divided into three components, as seen above:
 
 lang: The language in which the script is written. Because the default is painless, this parameter is not required if painless scripts are used. "painless," "expression," "moustache," "java," are examples of permissible values for this field.
@@ -23,16 +23,18 @@ If doc values are enabled, the document values can be accessed within the script
 Painless can be used with the _update API to update the documents of an index. Make sure to change the doc _id in the example below with your document id.
 
 
-
+```
 POST accounts/_update/cBoP-H8Bi5LMwQDv6Xb6
 {
   "script": {
     "source": "ctx._source.gender = \"Male\""
   }
 }
+```
 
+```
 GET accounts/_doc/cBoP-H8Bi5LMwQDv6Xb6
-
+```
 
 Because the default language in ES is "painless," there was no need to specify the "lang" option in the previous example. We didn't send any parameters to the scripts, therefore "params" was left out as well. What would be the benefit of using "params"? Other than hardcoding the data in the script, why should you use "params"?
 
