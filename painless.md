@@ -162,6 +162,7 @@ GET bank/_search
       }
     }
   }
+}
 ```
 
 Hope you find this tutorial useful. I will be updating it by adding more examples very soon.
