@@ -60,7 +60,7 @@ POST accounts/_update/1
       "F" : "Female"
     }
   }
-}
+}}
 ```
 
 ```
