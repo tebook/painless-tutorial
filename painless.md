@@ -27,7 +27,7 @@ The script syntax is divided into three components, as seen above:
 
 If doc values are enabled, the document values can be accessed within the script using the syntax doc['field name']. Doc values will be enabled by default for 'Not Analyzed' fields. Another way of accessing the value is by using the syntax ctx._source.field name (i.e. use "_source" fields).  Typically you would like to use doc values for search and aggregation operations, and "_source" fields for updates.
 
-Painless can be used with the _update API to update the documents of an index. 
+Painless can be used with the _update API to update the documents of an index. For this example I am taking a document with doc _id 6 and changing the gender field to Male.
 
 ```
 POST accounts/_update/6
