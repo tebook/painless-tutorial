@@ -108,7 +108,7 @@ PUT _ingest/pipeline/demo
   ]
 }
 ```
-You must have noticed that when used with pipelines the feild values must be accessed using ctx.fieldname and not ctx._source.fieldname. It can throw you off at times, so do remember it for the exam.
+You must have noticed that when used with script processor the feild values must be accessed using ctx.fieldname and not ctx._source.fieldname. It can throw you off at times, so do remember it for the exam.
 
 Let us call this pipeline using the _reindex API and reindex to a new index calling it the bank index.
 ```
