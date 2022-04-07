@@ -2,7 +2,7 @@
 
 Most of the time if you are using Elasticsearch(ES), data may have to transformed before ingesting. A dynamic programming language "Painless" was created exclusively for ES which can help with cleaning, enriching and tranforming data.
 
-If you are preparing for the Elasticsearch Certified Engineer's Exam, working knowledge of Painless becomes extremely important. The following section discuss about the basics of Painless to get you started quickly. For this tutorial I have used the accounts index which can be created using the sample data found here.
+If you are preparing for the Elastic Certified Engineer's Exam, working knowledge of Painless becomes extremely important. The following section discuss about the basics of Painless to get you started quickly. For this tutorial I have used the accounts index which can be created using the sample data found here.
 
 https://github.com/tebook/prepbook-elastic-certified-engineer/blob/main/elastprepbook/accounts.json
 
