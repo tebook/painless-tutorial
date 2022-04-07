@@ -29,7 +29,7 @@ Depending on where a painless script is used, it will have access to certain spe
 
 Scripts used in search and aggregations will be executed once for every document that matches a query or an aggregation, with the exception of script fields(discussed later in this tutorial), which are executed once per search hit. This might be millions or billions of executions, depending on how many documents you have: these scripts must be fast! Here doc-values, the _source field, and saved fields can all be used to get field values from a script.
 
-Painless can be used with the _update API to update the documents of an index. As mentioned above with update, update-by-query, or reindex API the way of accessing a value is by using the syntax ctx._source.field name (i.e. use "_source" fields). For this example I am taking a document with doc _id 6 and changing the gender field to Male.
+Painless can be used with the _update API to update the documents of an index. As mentioned above with update, update-by-query, or reindex API the way of accessing a value is by using the syntax ctx._source.fieldname (i.e. use "_source" fields). For this example I am taking a document with doc _id 6 and changing the gender field to Male.
 
 ```
 POST accounts/_update/6
@@ -146,7 +146,8 @@ GET accounts/_search
   }
 }
 ```
-A common use case is to have to build dynamic fields on the fly while searching. You can build dynamic fields in the query answer using script fields ("script fields"). Let's make a scripted field called balancebyage that is formed by dividing account balance by the account holder's age, and observe how script fields work. Also, because the balance and age fields are not analyzed and have doc values enabled by default, I'm getting them via doc values rather than _source, which would be substantially slower.
+A common use case is to have to build dynamic fields on the fly while searching. You can build dynamic fields in the query answer using script fields("script_fields"). Let's make a scripted field called balancebyage that is formed by dividing account balance by the account holder's age, and observe how script fields work. Also, because the balance and age fields are not analyzed and have doc values enabled by default, I'm getting them via doc values rather than _source, which would be substantially slower.
+
 ```
 GET bank/_search
 {
@@ -162,7 +163,6 @@ GET bank/_search
     }
   }
 ```
-
 
 Hope you find this tutorial useful. I will updating it by adding more examples very soon.
 
